@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component , Input, OnInit} from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-user-cards',
@@ -7,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './user-cards.component.scss'
 })
 export class UserCardsComponent {
+  @Input() user: any;
+  constructor() { }
 
 }

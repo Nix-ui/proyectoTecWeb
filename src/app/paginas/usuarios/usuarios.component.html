@@ -1,1 +1,11 @@
-<button (onclick)="getUsers()">Obtener Usuarios</button>
+<div class="container">
+    @for(user of listaUsuarios; track user) {
+        <app-user-cards [user]="user"></app-user-cards>
+    } @empty {
+        <p>No hay usuarios disponibles.</p>
+    }
+</div>
+<div class="group-buttons">
+    <button (click)="getUsers(page-1)" [disabled]="page <= 1"> Previous page</button>
+    <button (click)="getUsers(page+1)" [disabled]="page >= 2"> Next  page</button>
+</div>
