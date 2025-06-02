@@ -1,5 +1,7 @@
 import { Component , Input, OnInit} from '@angular/core';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { ApiClientService } from '../../servicios/api-client.service';
 
 @Component({
   selector: 'app-user-cards',
@@ -9,6 +11,5 @@ import { Observable } from 'rxjs';
 })
 export class UserCardsComponent {
   @Input() user: any;
-  constructor() { }
-
+  constructor( private router: Router, private api: ApiClientService) { }
 }

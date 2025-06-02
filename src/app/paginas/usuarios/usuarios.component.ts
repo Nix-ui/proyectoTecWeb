@@ -1,7 +1,8 @@
 import { Component, Input , OnInit} from '@angular/core';
 import { ApiClientService } from '../../servicios/api-client.service';
 import { UserCardsComponent } from '../../elementos/user-cards/user-cards.component';
-
+import { Usuario } from '../../interfaces/usuario';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-usuarios',
   imports: [UserCardsComponent],
@@ -9,9 +10,9 @@ import { UserCardsComponent } from '../../elementos/user-cards/user-cards.compon
   styleUrl: './usuarios.component.scss'
 })
 export class UsuariosComponent implements OnInit {
-  listaUsuarios: any[] = [];
+  listaUsuarios: Usuario[] = [];
   page: number;
-  constructor(private apiClientService: ApiClientService) { 
+  constructor(private apiClientService: ApiClientService,private router: Router) { 
     this.page = 1;
   }
   ngOnInit(): void {
@@ -32,5 +33,8 @@ export class UsuariosComponent implements OnInit {
         console.error('Error fetching data:', error);
       }
     });
+  }
+  showUser(id:number){
+    this.router.navigate(['/user', id]);
   }
 }
