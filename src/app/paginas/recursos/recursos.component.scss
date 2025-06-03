@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.resource {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #004080;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.group-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}

@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { RegisterUser } from '../../interfaces/register-user';
 import { Usuario } from '../../interfaces/usuario';
 import { UsersService } from '../../servicios/users.service';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-registro',
   imports: [ ReactiveFormsModule],

@@ -1,0 +1,16 @@
+<p>recursos works!</p>
+<h3>Lista de Recursos</h3>
+<div class="container">
+  @for (recurso of listaRecursos; track recurso.id) {
+    <div class="resource">
+      <app-resource-card [recurso]="recurso"></app-resource-card>
+    </div>
+  } @empty {
+    <p>No hay recursos disponibles.</p>
+  }
+</div>
+
+<div class="group-buttons">
+  <button (click)="getRecursos(page - 1)" [disabled]="page <= 1">Anterior</button>
+  <button (click)="getRecursos(page + 1)" [disabled]="page >= 2">Siguiente</button>
+</div>
