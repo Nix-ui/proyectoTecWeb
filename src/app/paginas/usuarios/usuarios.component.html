@@ -8,6 +8,16 @@
         <p>No hay usuarios disponibles.</p>
     }
 </div>
+<!-- <div class="container">
+    @for (registerUser of users; track registerUser) {
+        <div class="user">
+            <app-user-cards [user]="registerUser"></app-user-cards>
+            <button  > ver detalles</button>
+        </div>
+    } @empty {
+        <p>No hay usuarios disponibles.</p>
+    }
+</div> -->
 <div class="group-buttons">
     <button (click)="getUsers(page-1)" [disabled]="page <= 1"> Previous page</button>
     <button (click)="getUsers(page+1)" [disabled]="page >= 2"> Next  page</button>
