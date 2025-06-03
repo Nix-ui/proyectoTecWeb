@@ -1,49 +1,88 @@
 .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch; /* Asegura que todos los elementos tengan la misma altura */
+  gap: 20px;
+  padding: 20px;
+
+  .user {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content:  center;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-    .user{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        flex: 1 1 300px;
-        max-height: 30dvh;
-        max-width:35%;
-        min-width: 25%;
-        background-color: #f9f9f9;
-        app-user-cards{
-            flex: 1 1 800px; 
-            &hover{
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                transform: scale(1.02);
-                transition: all 0.3s ease-in-out;
-            }
-        }
-        button{
-            width: 100%;
-            height: 50px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-            transition: background-color 0.3s ease;
-            &:hover {
-                background-color: #0056b3;
-            }
-        }
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente los elementos */
+    justify-content: space-between; /* Distribuye verticalmente los elementos */
+    flex: 1 1 300px; /* Permite que los elementos crezcan hasta un máximo de 300px */
+    max-width: 35%; /* Limita el ancho máximo */
+    min-width: 25%; /* Define el ancho mínimo */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
     }
+
+    app-user-cards {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Centra horizontalmente la imagen */
+      justify-content: center; /* Centra verticalmente la imagen */
+      padding: 20px; /* Espacio interno para separar la imagen de los bordes */
+
+      img {
+        max-width: 100%; /* Asegura que la imagen no se salga del contenedor */
+        height: auto; /* Mantén la proporción de la imagen */
+        border-radius: 5px; /* Redondea las esquinas de la imagen */
+      }
+    }
+
+    button {
+      width: 100%;
+      height: 50px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
 }
+
 .group-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #6c757d;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &[disabled] {
+      background-color: #adb5bd;
+      cursor: not-allowed;
+    }
+
+    &:not([disabled]):hover {
+      background-color: #5a6268;
+    }
+  }
 }
