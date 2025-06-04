@@ -70,4 +70,18 @@ export class CreateUserComponent {
       }
     });
   }
+  deleteUser(){
+    if(this.createdUser){
+      this.usersService.deleteUser(this.createdUser.id).subscribe({
+        next: () => {
+          console.log('User deleted successfully');
+          alert('Usuario eliminado correctamente');
+          this.form.reset();
+        },
+        error: (error) => {
+          console.error('Error deleting user:', error);
+        }
+      });
+    }
+  }
 }
