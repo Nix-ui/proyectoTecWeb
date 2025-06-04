@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiClientService } from '../../servicios/api-client.service';
+import { RecursosService } from '../../servicios/recursos.service';
 import { Router } from '@angular/router';
 import { Recurso } from '../../interfaces/recurso';
 import { ResourceCardComponent } from '../../elementos/resource-card/resource-card.component';
@@ -17,8 +17,8 @@ export class RecursosComponent implements OnInit {
   page: number;
 
   constructor(
-    private apiClientService: ApiClientService,
-    private router: Router
+    private router: Router,
+    private recursosService: RecursosService
   ) {
     this.page = 1;
   }
@@ -28,15 +28,12 @@ export class RecursosComponent implements OnInit {
   }
 
   getRecursos(page?: number): void {
-    let endpoint = 'unknown';
     if (page) {
       this.page = page;
-      endpoint += `?page=${page}`;
     }
-
-    this.apiClientService.get(endpoint).subscribe({
+    this.recursosService.getRecursos(this.page).subscribe({
       next: (data) => {
-        this.listaRecursos = data.data;
+        this.listaRecursos = data;
         console.log('Recursos recibidos:', data);
       },
       error: (error) => {
@@ -44,5 +41,4 @@ export class RecursosComponent implements OnInit {
       }
     });
   }
-
 }

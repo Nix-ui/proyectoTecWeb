@@ -1,0 +1,84 @@
+form {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', sans-serif;
+
+  h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  .button-group{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    button{
+      flex:  1 1 100%;
+      &:disabled{
+        opacity: 0.5;
+        cursor: not-allowed;
+        background-color: #0d6efd;
+      }
+    }
+  }
+  .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #555;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 10px 12px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+      &:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.2);
+        outline: none;
+      }
+    }
+
+    select {
+      appearance: none;
+      background: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23999' d='M6 7.59l4.7-4.7a.75.75 0 111.06 1.06L6.53 9.18a.75.75 0 01-1.06 0L.24 3.95a.75.75 0 011.06-1.06z'/%3E%3C/svg%3E") no-repeat right 10px center;
+      background-color: #fff;
+      cursor: pointer;
+      padding-right: 30px;
+    }
+  }
+
+  .btn {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #0d6efd;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #0b5ed7;
+    }
+  }
+}
