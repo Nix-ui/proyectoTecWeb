@@ -1,0 +1,72 @@
+.navbar {
+  background-color: #333;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-item {
+  display: inline-block;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  &.active {
+    background-color: #0d6efd; /* Azul para Usuarios */
+    color: white;
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.5);
+    transform: translateY(-2px);
+  }
+
+  &.active-registrar {
+    background-color: #ffc107; /* Naranja para Registrar */
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.5);
+    transform: translateY(-2px);
+  }
+    &.active-recurso {
+    background-color: #14c59f; /* Naranja para Registrar */
+    color: white;
+    box-shadow: 0 4px 12px rgba(173, 170, 160, 0.5);
+    transform: translateY(-2px);
+  }
+  &.active-create{
+    background-color: #14c59f; /* Naranja para Registrar */
+    color: white;
+    box-shadow: 0 4px 12px rgba(173, 170, 160, 0.5);
+    transform: translateY(-2px);
+  }
+}
+
+.navbar-delete {
+  color: #dc3545;
+  cursor: default;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #f8d7da;
+  }
+}

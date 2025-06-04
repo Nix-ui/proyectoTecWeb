@@ -23,20 +23,17 @@ export class UsuariosComponent implements OnInit {
     this.users = this.getAllUsersRegister();
   }
   getUsers(page?:number): void {
-    let finalEndpoint= 'users';
     if(page){
       this.page = page;
-      finalEndpoint += `?page=${page}`;
     }
-    this.apiClientService.get(finalEndpoint).subscribe({
-      next: (data) => {
-        this.listaUsuarios = data.data;
-        console.log('Data received:', data);
-      },  
-      error: (error) => {
-        console.error('Error fetching data:', error);
-      }
-    });
+    this.usersService.getUsers(this.page).subscribe({
+    next: (data) => {
+      this.listaUsuarios = data;
+      console.log('Data received:', data);
+    },
+    error: (error) => {
+      console.error('Error fetching data:', error);
+    }});
   }
   getAllUsersRegister(): RegisterUser[] {
     const users = this.usersService.getAllUsers();
