@@ -4,6 +4,7 @@ import { DetallesUsuarioComponent } from './paginas/detalles-usuario/detalles-us
 import { RegistroComponent } from './paginas/registro/registro.component';
 import { RecursosComponent } from './paginas/recursos/recursos.component';
 import { CreateUserComponent } from './paginas/create-user/create-user.component';
+import { LoginComponent } from './paginas/login/login.component';
 
 export const routes: Routes = [
     { path: 'users',component: UsuariosComponent},
@@ -11,5 +12,6 @@ export const routes: Routes = [
     { path: 'register',component: RegistroComponent},
     { path: 'resource',component: RecursosComponent},
     {path: 'create', component: CreateUserComponent},
-    { path: '', redirectTo: '/users', pathMatch: 'full' },
+    { path: 'login', component: LoginComponent },
+    { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
