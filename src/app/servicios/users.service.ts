@@ -28,12 +28,12 @@ export class UsersService {
       }
     }));
   }
-  registerUser(user: RegisterUser): Observable<RegisterUser> {
-    return this.http.request<RegisterUser>('POST', `${environment.API_BASE_URL}/register`, {
+  registerUser(user: RegisterUser): Observable<any> {
+    return this.http.request<any>('POST', `${environment.API_BASE_URL}/register`, {
       headers: { 'x-api-key': environment.API_KEY },
       body: user
     }).pipe(
-      map((response: RegisterUser) => {
+      map((response: any) => {
         return response;
       })
     );
