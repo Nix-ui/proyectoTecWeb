@@ -34,7 +34,11 @@ export class RegistroComponent implements OnInit {
       this.users = JSON.parse(existingUsers);
     }
     this.users.push(user);
-    this.api.post('register', this.users);
+    this.usersService.registerUser(user).subscribe(response => {
+      console.log(response);
+      localStorage.setItem('users', JSON.stringify(this.users));
+      alert(`Usuario registrado correctamente, ${response}`);
+    });
   }
   ngOnInit(): void {
     this.usersService.getUsers().subscribe((data: Usuario[]) => {
