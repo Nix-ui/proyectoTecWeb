@@ -27,32 +27,36 @@ form {
     input,
     select {
       width: 100%;
-      padding: 10px 12px;
+      height: 44px; /* MISMA altura para ambos */
+      padding: 10px 14px;
       font-size: 1rem;
       border: 1px solid #ccc;
       border-radius: 6px;
+      background-color: #fdfdfd;
+      box-sizing: border-box;
       transition: border-color 0.3s ease, box-shadow 0.3s ease;
 
       &:focus {
         border-color: #0d6efd;
         box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.2);
         outline: none;
+        background-color: #fff;
       }
     }
 
     select {
       appearance: none;
-      background: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23999' d='M6 7.59l4.7-4.7a.75.75 0 111.06 1.06L6.53 9.18a.75.75 0 01-1.06 0L.24 3.95a.75.75 0 011.06-1.06z'/%3E%3C/svg%3E") no-repeat right 10px center;
+      padding-right: 40px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 12 12'%3E%3Cpath fill='%23999' d='M6 7.59l4.7-4.7a.75.75 0 111.06 1.06L6.53 9.18a.75.75 0 01-1.06 0L.24 3.95a.75.75 0 011.06-1.06z'/%3E%3C/svg%3E") no-repeat right 12px center;
       background-color: #fff;
       cursor: pointer;
-      padding-right: 30px;
     }
   }
 
   .btn {
     display: inline-block;
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     font-size: 1rem;
     font-weight: bold;
     color: white;

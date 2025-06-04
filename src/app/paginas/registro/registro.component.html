@@ -1,21 +1,27 @@
-<form action="" class="col-md-6" [formGroup]="form" (ngSubmit)="onSubmit()">
-    <h3> Registro de usuario</h3>
-    <div class="form-group">
-        <label for="email">Email</label>
-        <select name="registerEmail" id="registerEmail">
-        @for(usuario of listaUsuarios; track usuario) {
-            <option value="{{usuario.email}}">{{usuario.email}}</option>
-        }@empty {
-            <option value="">No hay usuarios disponibles</option>
-        }
-        </select>
-    </div>
-    
-    <div class="form-group">
-        <label for="password">Contraseña</label>
-        <input type="password" id="password" class="form-control" formControlName="password">
-    </div>
-    
-    <button type="submit" class="btn btn-primary">Registrar</button>
+<form class="registro-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <h3>Registro de usuario</h3>
 
+  <div class="form-group">
+    <label for="registerEmail">Email</label>
+    <select id="registerEmail" formControlName="email">
+      @for(usuario of listaUsuarios; track usuario) {
+        <option value="{{usuario.email}}">{{usuario.email}}</option>
+      } @empty {
+        <option value="">No hay usuarios disponibles</option>
+      }
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Contraseña</label>
+    <input
+      type="password"
+      id="password"
+      formControlName="password"
+      class="form-control"
+      placeholder="Ingresa tu contraseña"
+    />
+  </div>
+
+  <button type="submit" class="btn">Registrar</button>
 </form>
