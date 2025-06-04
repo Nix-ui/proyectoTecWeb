@@ -55,4 +55,13 @@ export class UsersService {
       })
     );
   }
+  deleteUser(id:number):Observable<any> {
+    return this.http.request('DELETE', `${environment.API_BASE_URL}/users/${id}`, {
+      headers: { 'x-api-key': environment.API_KEY }
+    }).pipe(
+      map((response: any) => {
+        return response;
+      })
+    );
+  }
 }
