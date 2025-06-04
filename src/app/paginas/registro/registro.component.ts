@@ -37,8 +37,9 @@ export class RegistroComponent implements OnInit {
     this.api.post('register', this.users);
   }
   ngOnInit(): void {
-    this.usersService.getUsers().then((usuarios: Usuario[]) => {
-      this.listaUsuarios = usuarios;
+    this.usersService.getUsers().subscribe((data: Usuario[]) => {
+      console.log(data);
+      this.listaUsuarios = data;
     });
   }
 }
