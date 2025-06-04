@@ -56,7 +56,16 @@ export class UsersService {
       })
     );
   }
-  login(credentials: LoginRequest): Observable<LoginResponse> {
+deleteUser(id:number):Observable<any> {
+    return this.http.request('DELETE', `${environment.API_BASE_URL}/users/${id}`, {
+      headers: { 'x-api-key': environment.API_KEY }
+    }).pipe(
+      map((response: any) => {
+        return response;
+      })
+    );
+  }
+login(credentials: LoginRequest): Observable<LoginResponse> {
     return this.http.request<LoginResponse>('POST', `${environment.API_BASE_URL}/login`, {
       body: credentials,
       headers: { 'x-api-key': environment.API_KEY }}).pipe(
@@ -65,5 +74,4 @@ export class UsersService {
       })
     );
   }
-  
 }
