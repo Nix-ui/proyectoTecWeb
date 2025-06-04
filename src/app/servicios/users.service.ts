@@ -3,6 +3,7 @@ import { RegisterUser } from '../interfaces/register-user';
 import { Usuario } from '../interfaces/usuario';
 import { CreateUser } from '../interfaces/create-user';
 import { CreatedUserResponse } from '../interfaces/created-user-response';
+import { LoginRequest, LoginResponse } from '../interfaces/auth'; 
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
@@ -55,4 +56,14 @@ export class UsersService {
       })
     );
   }
+  login(credentials: LoginRequest): Observable<LoginResponse> {
+    return this.http.request<LoginResponse>('POST', `${environment.API_BASE_URL}/login`, {
+      body: credentials,
+      headers: { 'x-api-key': environment.API_KEY }}).pipe(
+      map((response: LoginResponse) => {  
+        return response;
+      })
+    );
+  }
+  
 }
